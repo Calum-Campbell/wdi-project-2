@@ -1,0 +1,11 @@
+<h3>bikes</h3>
+
+<% @bikes.each do |bike| %>
+  <div class="bike">
+    <%= bike.name %>
+    <%= link_to "Show all bookings", bike_bookings_path(bike) %>
+    <%= link_to "Delete", bike_path(bike), data: { confirm: 'Are you sure?' }, method: :delete %>
+    <%= link_to "Edit", edit_bike_path(bike) %>
+    <%= link_to "Add booking", new_bike_booking_path(bike) %>
+  </div>
+<% end %>
