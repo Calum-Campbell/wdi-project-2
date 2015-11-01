@@ -1,6 +1,8 @@
 class Bike < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
 
-  has_many :bookings
-  belongs_to :user
+  
+  belongs_to :owner, class_name: 'User', foreign_key: 'owner_id' 
+  has_many :bookings, dependent: :destroy
+
 end
