@@ -18,6 +18,8 @@
       <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "See bikes and add new booking", bikes_path %></li>
       <li><%= link_to "Add new Bike", new_bike_path %></li>
+      <li><%= link_to "About", about_path %></li>
+      <li><%= link_to "Contact Us", contact_path %></li>
       <% if current_user %>
       <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
       <% else %>

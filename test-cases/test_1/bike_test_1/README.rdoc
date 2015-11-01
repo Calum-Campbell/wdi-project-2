@@ -7,7 +7,12 @@ Current:
 - Made a show for each bike
 
 To do :
-- 
+- Add a location feature for the bikes
+- Add map feature for bikes
+- Add all the verifications
+- Do some wireframing
+- Add a feature model "many to many"
+- Static pages
 
 
 
