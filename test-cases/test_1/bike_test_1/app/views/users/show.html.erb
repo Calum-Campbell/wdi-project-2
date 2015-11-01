@@ -1,11 +1,18 @@
-<h1>User Profile Page</h1>
+<h1><%=@user.name%>'s page</h1>
 ​
 <%= image_tag @user.image  %>
 ​
-<%= @user.email  %> </br>
+<%= "Email: #{@user.email}"  %> </br>
+</br>
 
+<%= "Bookings:"  %> </br>
+<% count = 0 %>
 <% @user.bookings.each do |booking| %>
-<%= booking.length %> </br>
-<%= booking.start_time %> </br>
+<% count +=1 %>
+<% bike = Bike.find(booking.bike_id) %>
+<%= "Booking number #{count} :" %>
+<%= "You have booked #{bike.name}, at: #{booking.start_time}, for #{booking.length} hours" %>
+</br>
+</br>
 <% end %>
 
