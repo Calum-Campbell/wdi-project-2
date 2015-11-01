@@ -3,5 +3,13 @@ Current:
 - Can create bikes
 - Can make booking of bike
 - That booking is related to a rider_id and a bike_id
+- Say who the owner and rider are
 
 To do :
+- Make a show for each bike
+
+
+
+
+
+

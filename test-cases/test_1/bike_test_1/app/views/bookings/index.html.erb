@@ -15,8 +15,10 @@
     <td>
       <%= (booking.calculate_end_time + 60).strftime('%e %b %Y %H:%M%p') %>
     </td>
-    <td><%= User.find(booking.rider_id).name %></td>
-    <td><%= User.find(Bike.find(booking.bike_id).owner_id).name %></td>
+    <% rider = User.find(booking.rider_id)%>
+    <% owner = User.find(Bike.find(booking.bike_id).owner_id)%>
+    <td><%= rider.name %></td>
+    <td><%= owner.name %></td>
     <td><%= link_to "Delete", bike_booking_path(@bike, booking), data: { confirm: 'Are you sure?' }, method: :delete %>
     </td>
     <td><%= link_to "Edit", edit_bike_booking_path(@bike, booking) %>
