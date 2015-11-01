@@ -180,9 +180,10 @@ end
 
 *When we create a new bike, we want it to be associated with the user currently logged in. Inside `bikes_controller.rb`, inside our create method, we can change `@bike = Bike.new(bike_params)` to be `@bike = current_user.bikes.new(bike_params)`. This will add the new bike to our current user's bikes, as it is being created. 
 
-*Migrate new columsn for user, name, bio, image
+*Migrate new columsn for name, username, name, bio, image
 
-test
+
+
 
 
 
