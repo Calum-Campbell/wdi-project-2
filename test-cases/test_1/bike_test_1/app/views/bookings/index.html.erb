@@ -4,7 +4,7 @@
     <th>Start</th>
     <th>End</th>
     <th>Rider name</th>
-    <th>Owner Id</th>
+    <th>Owner Name</th>
   </tr>
   
   <% @bookings.each do |booking| %>
@@ -17,8 +17,8 @@
     </td>
     <% rider = User.find(booking.rider_id)%>
     <% owner = User.find(Bike.find(booking.bike_id).owner_id)%>
-    <td><%= rider.name %></td>
-    <td><%= owner.name %></td>
+    <td><%= link_to "#{rider.name}", user_path(rider) %></td>
+    <td><%= link_to "#{owner.name}", user_path(owner) %></td>
     <td><%= link_to "Delete", bike_booking_path(@bike, booking), data: { confirm: 'Are you sure?' }, method: :delete %>
     </td>
     <td><%= link_to "Edit", edit_bike_booking_path(@bike, booking) %>
