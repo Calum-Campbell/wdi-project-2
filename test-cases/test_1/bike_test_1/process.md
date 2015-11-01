@@ -180,9 +180,36 @@ end
 
 *When we create a new bike, we want it to be associated with the user currently logged in. Inside `bikes_controller.rb`, inside our create method, we can change `@bike = Bike.new(bike_params)` to be `@bike = current_user.bikes.new(bike_params)`. This will add the new bike to our current user's bikes, as it is being created. 
 
-*Migrate new columsn for name, username, name, bio, image
+*Migrate new columns for name, username, name, bio, image
 
+*Add forign keys for booking:
+```
+class Booking < ActiveRecord::Base
+  include Bookable
 
+  belongs_to :bike
+  belongs_to :rider, class_name: 'User', foreign_key:'rider_id'
+end
+```
+*Add foreign keys for users
+```
+class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  has_many :bikes, class_name: 'Bike', foreign_key: 'owner_id', dependent: :destroy
+
+  has_many :bookings, class_name: 'Booking', foreign_key: 'rider_id', dependent: :destroy
+end
+```
+
+*Set up booking with current user in Bookings controller
+```
+def create
+  @booking =  current_user.bookings.new(params[:booking].permit(:bike_id, :start_time, :length))   
+```
 
 
 

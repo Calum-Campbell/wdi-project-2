@@ -4,5 +4,9 @@
 <%= image_tag @user.image  %>
 ​
 <%= @user.email  %> </br>
-<%= @user.name %>
+
+<% @user.bookings.each do |booking| %>
+<%= booking.length %> </br>
+<%= booking.start_time %> </br>
+<% end %>
 
