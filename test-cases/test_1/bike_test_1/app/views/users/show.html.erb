@@ -20,7 +20,7 @@
 <% bike = Bike.find(bikeid) %> 
 <% rider = User.find(riderid) %> 
 
-<% if bike.owner_id == @user.id  %> </br>
+<% if bike.owner_id == current_user.id  %> </br>
 <%=  "Your bike '#{bike.name}' is booked out on #{booking.start_time} for #{booking.length} hours by #{rider.name}"%> </br>
  </br>
 <% else %>

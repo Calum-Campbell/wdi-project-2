@@ -27,9 +27,9 @@
 <%= feature.name %> </br>
 <% end %>
 <% if @bike.owner_id == current_user.id %>
-<%= link_to "Book this bike!", new_bike_booking_path(@bike) %>
-<%else %>
 <%= link_to "Edit detials for #{@bike.name}", edit_bike_path(@bike)%>
+<%else %>
+<%= link_to "Book this bike!", new_bike_booking_path(@bike) %>
 <%end%>
 <div id="map"></div>
 
