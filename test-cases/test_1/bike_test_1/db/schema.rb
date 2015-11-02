@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102112633) do
+ActiveRecord::Schema.define(version: 20151102143249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,10 +42,6 @@ ActiveRecord::Schema.define(version: 20151102112633) do
   add_index "bookings", ["bike_id"], name: "index_bookings_on_bike_id", using: :btree
 
   create_table "features", force: :cascade do |t|
-    t.boolean  "helmet"
-    t.boolean  "lock"
-    t.boolean  "light"
-    t.boolean  "mud_guard"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "name"

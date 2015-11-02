@@ -19,8 +19,10 @@
 </script>
 
 <h1><%= @bike.name %>'s Page</h1>
-<%= image_tag @bike.image %>
-<%= @bike.description %>
+
+<%= image_tag @bike.image %> </br>
+<%= @bike.description %></br>
+<%= "Features on this bike :" %></br>
 <% @bike.features.each do |feature| %>
 <%= feature.name %> </br>
 <% end %>

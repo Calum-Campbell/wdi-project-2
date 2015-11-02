@@ -18,6 +18,9 @@ users = User.create([{name:"John Smith", username:"John123", bio:"This is johns 
   {name:"Derick Davies", username:"Deric13", bio:"This is Derricks bio all about him..salsfkasdkl", image:"http://www3.pictures.gi.zimbio.com/2009+MusiCares+Person+Year+Gala+Arrivals+-Vhx_isRw6Nl.jpg", password: "password", email:"derick@derick.com"},
   {name:"Martha Morely", username:"Martha1", bio:"This is Marthas bio all about him..salsfkasdkl", image:"http://cdn01.cdn.justjared.com/wp-content/uploads/2013/09/kunis-portraits/mila-kunis-olivia-wilde-third-person-tiff-portrait-session-10.jpg", password: "password", email:"martha@martha.com"}])
 
+## Features
+features = Feature.create([{name: "Helmet"}, {name:"Lights"}, {name:"Mud Guard"}, {name:"Lock"}])
+
 
 
 

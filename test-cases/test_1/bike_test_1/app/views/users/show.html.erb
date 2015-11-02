@@ -1,6 +1,6 @@
 <h1><%=@user.name%>'s page</h1>
 ​
-<%= image_tag @user.image  %> </br>
+<%= image_tag @user.image, :size => '180x260'  %> </br>
 ​
 <%= "Username: #{@user.username}"  %> </br>
 <%= "Email: #{@user.email}"  %> </br> </br>
@@ -9,7 +9,7 @@
 <% @user.bikes.each do |bike| %>
 <% bike_count +=1 %>
 <%= "Bike number #{bike_count}" %> </br>
-<%= bike.name  %> </br>
+<%= "Bike name:" %> <%= link_to " #{bike.name}", bike_path(bike)  %> </br>
 <%= "Description: #{bike.description}"  %> </br> </br>
 <% end %>
 
