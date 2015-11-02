@@ -24,6 +24,7 @@
 <% @bike.features.each do |feature| %>
 <%= feature.name %> </br>
 <% end %>
+<%= link_to "Book this bike!", new_bike_booking_path(@bike) %>
 <div id="map"></div>
 
 

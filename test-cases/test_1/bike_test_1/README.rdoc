@@ -10,7 +10,7 @@ Current:
 
 To do :
 - Add a 'bookings on my bikes' (Loop over bookings, push into array when find owner_id == current_user_id)
-
+- make seed DATA
 - Add number of bikes to user profile
 - Add a location feature for bikes geocoder
 - Add map feature for bikes
