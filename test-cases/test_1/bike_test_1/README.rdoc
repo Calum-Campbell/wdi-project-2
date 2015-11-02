@@ -12,17 +12,19 @@ Current:
 - Add number of bikes to user profile
 - Sort out the features show on the bike profile page
 - Get edit bike instead of book bike on bike profile page for owner
-
-To do :
+- Get the "no bikes out to rent at the moment" on user profile
 - Add a location feature for bikes geocoder
 - Add map feature for bikes
 
-- Get the "no bikes out to rent at the moment" on user profile
 
+To do :
+- SCSS (wireframe?)
 
+- Add some pricing/profit things
 
+- Stop being able to go to other pages when not logged in
 - Add all the verifications for user sign up
-- Do some wireframing
+
 
 
 

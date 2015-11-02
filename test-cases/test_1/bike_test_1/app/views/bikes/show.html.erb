@@ -1,27 +1,7 @@
-<style>
-  #map {
-    width: 500px;
-    height: 400px;
-  }
-</style>
-<script src="https://maps.googleapis.com/maps/api/js"></script>
-<script>
-  function initialize() {
-    var mapCanvas = document.getElementById('map');
-    var mapOptions = {
-      center: new google.maps.LatLng(44.5403, -78.5463),
-      zoom: 8,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-    var map = new google.maps.Map(mapCanvas, mapOptions)
-  }
-  google.maps.event.addDomListener(window, 'load', initialize);
-</script>
-
 <h1><%= @bike.name %>'s Page</h1>
 
 <%= image_tag @bike.image %> </br>
-<%= @bike.description %></br>
+<%= "Description:#{@bike.description}" %></br>
 <%= "Features on this bike :" %></br>
 <% @bike.features.each do |feature| %>
 <%= feature.name %> </br>
@@ -30,7 +10,8 @@
 <%= link_to "Edit detials for #{@bike.name}", edit_bike_path(@bike)%>
 <%else %>
 <%= link_to "Book this bike!", new_bike_booking_path(@bike) %>
-<%end%>
+<% end %>
+
 <div id="map"></div>
 
 
