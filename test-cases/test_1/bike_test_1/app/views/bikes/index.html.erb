@@ -1,13 +1,20 @@
-<h3>bikes</h3>
-
-
-<% @bikes.each do |bike| %>
-  <div class="bike">
-    <%= link_to "#{bike.name}", bike_path(bike) %>
-    <%= link_to "Show all bookings", bike_bookings_path(bike) %>
-    <% link_to "Delete", bike_path(bike), data: { confirm: 'Are you sure?' }, method: :delete %>
-    <%= link_to "Edit", edit_bike_path(bike) %>
-    <%= link_to "Book this bike!", new_bike_booking_path(bike) %> </br>
-    <% link_to  "#{bike.name}'s Profile Page", bike_path(bike) %>
+<div class="row full-screen">
+  <div class="small-12 text-center large-12 columns zero-padding">
+    <img src="http://www.3d-hdwallpaper.com/bulk_images/desktop-fixie-bike-pics.jpg" alt="Bike backround">
   </div>
-<% end %>
+</div>
+
+<div class="row">
+  <ul class="small-block-grid-1 medium-block-grid-3 columns">
+    <% @bikes.each do |bike| %>
+     <li class="bike">
+      <%= link_to "#{bike.name}", bike_path(bike) %>
+      <%= link_to "Show all bookings", bike_bookings_path(bike) %>
+      <% link_to "Delete", bike_path(bike), data: { confirm: 'Are you sure?' }, method: :delete %>
+      <%= link_to "Edit", edit_bike_path(bike) %>
+      <%= link_to "Book this bike!", new_bike_booking_path(bike) %> </br>
+      <% link_to  "#{bike.name}'s Profile Page", bike_path(bike) %>
+    </li>  
+    <% end %>
+  </ul>
+</div>

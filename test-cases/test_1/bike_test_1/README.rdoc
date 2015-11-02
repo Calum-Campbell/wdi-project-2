@@ -25,6 +25,15 @@ To do :
 - Stop being able to go to other pages when not logged in
 - Add all the verifications for user sign up
 
+SCSS
+- Nav bar - Logo, list bike, register, login (opaque = 100%)
+- Home page
+- login
+- Register
+- Usershow
+- Bike show
+
+
 
 
 

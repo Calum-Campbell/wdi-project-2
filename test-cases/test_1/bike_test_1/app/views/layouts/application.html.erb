@@ -1,40 +1,60 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>BikeTest1</title>
-  <script src="https://maps.googleapis.com/maps/api/js"></script>
-  <%= include_gon %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<% flash.each do |name, message| %>
+<html lang="en">
+  <head>
+    <title>BikeTest1</title>
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <%= include_gon %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application"%>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <% flash.each do |name, message| %>
   <div class="flash-message flash-message-<%= name %>">
     <%= message %>
   </div>
-<% end %>
-<header>
-  <nav>
-    <ul>
-      <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "See bikes and book", bikes_path %></li>
-      <li><%= link_to "How it Works", about_path %></li>
-      <li><%= link_to "Contact Us", contact_path %></li>
-      <% if current_user %>
-      <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-      <li><%= link_to "Users", users_path %></li>
-      <li><%= link_to "My Profile", current_user %></li>
-      <li><%= link_to "Edit My Profile", edit_user_registration_path %></li>
-      <li><%= link_to "Add new Bike", new_bike_path %></li>
-      <% else %>
-      <li><%= link_to "Register", new_user_registration_path %></li>
-      <li><%= link_to "Login", new_user_session_path %></li>
-      <% end %>
-    </ul>
-  </nav>
-</header>
-<%= yield %>
+  <% end %>
+  <body>
+    <header>
+      <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+          <li class="name">
+            <h1><a href="/">MyBike</a></h1>
+          </li>
+          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
 
-</body>
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <li class="active"><%= link_to "How It Works", about_path %></li>
+            <li class="active"><%= link_to "List A Bike", new_bike_path %></li>
+            <% if current_user %>
+            <li class="active"><%= link_to "Log Out", destroy_user_session_path, method: :delete  %></li>
+            <% else %>
+            <li class="active"><%= link_to "Sign Up", new_user_registration_path %></li>
+            <li class="active"><%= link_to "Log In", new_user_session_path %></li> 
+            <% end %>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li><a href="#"></a></li>
+          </ul>
+        </section>
+      </nav>
+    </header>
+
+    <%= yield %>
+
+  </body>
 </html>
