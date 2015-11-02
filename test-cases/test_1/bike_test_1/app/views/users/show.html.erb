@@ -24,18 +24,18 @@
 <%=  "Your bike '#{bike.name}' is booked out on #{booking.start_time} for #{booking.length} hours by #{rider.name}"%> </br>
  </br>
 <% else %>
+<%= "Non of your bikes currently have any bookings!" %>
+
 <%end%>
-<%end%> </br>
+<%end%> 
 </br>
-</br>
-<%= "Bookings:"  %> </br>
+<%= "#{@user.name}'s rental bookings:"  %> </br>
 <% count = 0 %>
 <% @user.bookings.each do |booking| %>
 <% count +=1 %>
 <% bike = Bike.find(booking.bike_id) %>
 <%= "Booking number #{count} :" %></br>
 <%= "You have booked #{bike.name}, at: #{booking.start_time}, for #{booking.length} hours" %>
-</br>
 </br>
 <% end %>
 
