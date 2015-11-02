@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BikeTest1</title>
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+  <%= include_gon %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% flash.each do |name, message| %>
+  <div class="flash-message flash-message-<%= name %>">
+    <%= message %>
+  </div>
+<% end %>
+<header>
+  <nav>
+    <ul>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "See bikes and book", bikes_path %></li>
+      <li><%= link_to "How it Works", about_path %></li>
+      <li><%= link_to "Contact Us", contact_path %></li>
+      <% if current_user %>
+      <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+      <li><%= link_to "Users", users_path %></li>
+      <li><%= link_to "My Profile", current_user %></li>
+      <li><%= link_to "Edit My Profile", edit_user_registration_path %></li>
+      <li><%= link_to "Add new Bike", new_bike_path %></li>
+      <% else %>
+      <li><%= link_to "Register", new_user_registration_path %></li>
+      <li><%= link_to "Login", new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </nav>
+</header>
+<%= yield %>
+
+</body>
+</html>
