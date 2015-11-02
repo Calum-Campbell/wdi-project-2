@@ -16,19 +16,19 @@
   <nav>
     <ul>
       <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "See bikes and add new booking", bikes_path %></li>
-      <li><%= link_to "Add new Bike", new_bike_path %></li>
-      <li><%= link_to "About", about_path %></li>
+      <li><%= link_to "See bikes and book", bikes_path %></li>
+      <li><%= link_to "How it Works", about_path %></li>
       <li><%= link_to "Contact Us", contact_path %></li>
       <% if current_user %>
       <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+      <li><%= link_to "Users", users_path %></li>
+      <li><%= link_to "My Profile", current_user %></li>
+      <li><%= link_to "Edit My Profile", edit_user_registration_path %></li>
+      <li><%= link_to "Add new Bike", new_bike_path %></li>
       <% else %>
       <li><%= link_to "Register", new_user_registration_path %></li>
       <li><%= link_to "Login", new_user_session_path %></li>
       <% end %>
-      <li><%= link_to "Users", users_path %></li>
-      <li><%= link_to "My Profile", current_user %></li>
-      <li><%= link_to "Edit My Profile", edit_user_registration_path %></li>
     </ul>
   </nav>
 </header>

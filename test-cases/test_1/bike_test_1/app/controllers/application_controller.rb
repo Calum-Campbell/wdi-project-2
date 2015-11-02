@@ -13,4 +13,5 @@ class ApplicationController < ActionController::Base
         u.permit(:username, :image, :email, :password, :password_confirmation, :current_password, :name, :bio)
       end
     end
+    
 end

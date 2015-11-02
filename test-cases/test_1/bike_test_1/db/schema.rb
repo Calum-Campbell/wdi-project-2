@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151101173905) do
+ActiveRecord::Schema.define(version: 20151102112633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,12 @@ ActiveRecord::Schema.define(version: 20151101173905) do
     t.text    "description"
     t.float   "latitude"
     t.float   "longitude"
+    t.string  "address"
+  end
+
+  create_table "bikes_features", id: false, force: :cascade do |t|
+    t.integer "bike_id",    null: false
+    t.integer "feature_id", null: false
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -34,6 +40,16 @@ ActiveRecord::Schema.define(version: 20151101173905) do
   end
 
   add_index "bookings", ["bike_id"], name: "index_bookings_on_bike_id", using: :btree
+
+  create_table "features", force: :cascade do |t|
+    t.boolean  "helmet"
+    t.boolean  "lock"
+    t.boolean  "light"
+    t.boolean  "mud_guard"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

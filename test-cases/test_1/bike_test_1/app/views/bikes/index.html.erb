@@ -3,11 +3,11 @@
 
 <% @bikes.each do |bike| %>
   <div class="bike">
-    <%= bike.name %>
+    <%= link_to "#{bike.name}", bike_path(bike) %>
     <%= link_to "Show all bookings", bike_bookings_path(bike) %>
-    <%= link_to "Delete", bike_path(bike), data: { confirm: 'Are you sure?' }, method: :delete %>
+    <% link_to "Delete", bike_path(bike), data: { confirm: 'Are you sure?' }, method: :delete %>
     <%= link_to "Edit", edit_bike_path(bike) %>
     <%= link_to "Book this bike!", new_bike_booking_path(bike) %> </br>
-    <%= link_to  "#{bike.name}'s Profile Page", bike_path(bike) %>
+    <% link_to  "#{bike.name}'s Profile Page", bike_path(bike) %>
   </div>
 <% end %>

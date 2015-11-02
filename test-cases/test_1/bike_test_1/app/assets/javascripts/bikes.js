@@ -1,11 +1,3 @@
-<style>
-  #map {
-    width: 500px;
-    height: 400px;
-  }
-</style>
-<script src="https://maps.googleapis.com/maps/api/js"></script>
-<script>
   function initialize() {
     var mapCanvas = document.getElementById('map');
     var mapOptions = {
@@ -16,15 +8,3 @@
     var map = new google.maps.Map(mapCanvas, mapOptions)
   }
   google.maps.event.addDomListener(window, 'load', initialize);
-</script>
-
-<h1><%= @bike.name %>'s Page</h1>
-<%= image_tag @bike.image %>
-<%= @bike.description %>
-<% @bike.features.each do |feature| %>
-<%= feature.name %> </br>
-<% end %>
-<div id="map"></div>
-
-
-
