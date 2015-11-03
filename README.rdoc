@@ -1,33 +1,18 @@
-Current:
-- Can sign up members
-- Can create bikes
-- Can make booking of bike
-- That booking is related to a rider_id and a bike_id
-- Say who the owner and rider are
-- Made a show for each bike
-- Static pages
-- Features model done
-- make seed DATA
-- Add a 'bookings on my bikes' (Loop over bookings, push into array when find owner_id == current_user_id)
-- Add number of bikes to user profile
-- Sort out the features show on the bike profile page
-- Get edit bike instead of book bike on bike profile page for owner
-- Get the "no bikes out to rent at the moment" on user profile
-- Add a location feature for bikes geocoder
-- Add map feature for bikes
-
 
 To do :
 - SCSS (wireframe?)
-
 - Add some pricing/profit things
-
 - Stop being able to go to other pages when not logged in
 - Add all the verifications for user sign up
 
 SCSS
-- Forms (list bike & register/sign in)
-- Booking
+- install carrierwaves
+- sort out booking page
+- sort out how it works
+- sort out rentals page
+- sort out backgrounds on home and about
+- sort out MyBookings page
+- Clean all custom css
 
 Niceto Have:
 Clearing lightbox on bikeshow

@@ -29,14 +29,25 @@
   height: 20px;
 }
 
+.space {
+ min-width: 100%;
+ min-height: 250px;
+ background: #f5f5f5;
+}
+
+.content {
+ min-width: 100%;
+ min-height: 250px;
+}
+
 .full-screen {
   min-width: 100%;
   min-height: 400px;
   &.background-1 {
-    background: url(image_path("front-page-background.jpg")) repeat-x center center;
+    background: url(image_path("front-page-background-2.jpg")) repeat-x center center;
   }
   &.background-2 {
-    background: url(image_path("front-page-background-2.jpg")) repeat-x center center;
+    background: url(image_path("front-page-background.jpg")) repeat-x center center;
   }
   text-shadow: 1px 1px rgba(0,0,0,0.3);
 
