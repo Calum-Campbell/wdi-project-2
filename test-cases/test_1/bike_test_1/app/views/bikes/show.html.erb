@@ -3,31 +3,57 @@
   </div>
 </div>
 
-<div class="row heavy-left">
+<div class="row heavy-left center">
   <div class="medium-9 columns">
     <ul>
       <li><%=@bike.name %></li>
       <li><%= @bike.short_description %></li>
     </ul>
   </div>
+  </div>
+
+<div class="row heavy-left">
+  <div class="medium-9 columns">
+    <ul>
+      <li><h2>Description</h2></li>
+      <li><%= @bike.description %></li>
+      <li class="center"><%= "Features"%></li>
+      <li class='center'><% @bike.features.each do |feature| %>
+          <% if feature.name == "Helmet" %>
+          <%= image_tag("#{feature.name}.png",height: '50', width:'50')%>
+          <% elsif feature.name == "Flask" %>
+          <%= image_tag("#{feature.name}.png",height: '50', width:'50')%>
+          <% elsif feature.name == "Mud_guard" %>
+          <%= image_tag("#{feature.name}.png",height: '50', width:'50')%>
+          <% elsif feature.name == "Lights" %>
+          <%= image_tag("#{feature.name}.png",height: '50', width:'50')%>
+          <% elsif feature.name == "Lock" %>
+          <%= image_tag("#{feature.name}.png",height: '50', width:'50')%>
+          <% end %>
+          <% end %></li>
+    </ul>
+  </div>
+  <div class="medium-3 columns bike-show-right">
+    <ul>
+      <li>Owner Information</li>
+      <% owner = User.find(@bike.owner_id) %>
+      <li><%= image_tag(owner.image,height: '70', width:'70') %></li>
+      <li><%= owner.name %></li>
+      <li><%= owner.bio%></li>
+      <li><%="Member since: "%> <%=owner.created_at.to_date%></li>
+      <li><% if current_user%>
+          <% if @bike.owner_id == current_user.id %>
+          <%= link_to "Edit detials for #{@bike.name}", edit_bike_path(@bike)%>
+          <%else %>
+          <%= link_to "Book this bike!", new_bike_booking_path(@bike) %>
+          <% end %>
+          <% else %>
+          <%= link_to "Book this bike!", new_user_session_path %>
+          <%end%></li>
+    </ul>
+  </div>
 </div>
 
-<h1><%= @bike.name %>'s Page</h1>
-
-<%= "Description:#{@bike.description}" %></br>
-<%= "Features on this bike :" %></br>
-<% @bike.features.each do |feature| %>
-<%= feature.name %> </br>
-<% end %>
-<% if current_user%>
-<% if @bike.owner_id == current_user.id %>
-<%= link_to "Edit detials for #{@bike.name}", edit_bike_path(@bike)%>
-<%else %>
-<%= link_to "Book this bike!", new_bike_booking_path(@bike) %>
-<% end %>
-<% else %>
-<%= link_to "Book this bike!", new_user_session_path %>
-<%end%>
 
 <div id="map"></div>
 

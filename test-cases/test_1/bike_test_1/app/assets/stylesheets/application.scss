@@ -51,10 +51,25 @@
 }
 
 .heavy-left {
-  height: 100px;
-  background-color: red;
+  height: 50px;
+  text-align: justify;
 }
 
+.heavy-left h2 {
+  text-align: center;
+}
+
+.heavy-left li {
+  list-style-type: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.bike-show-right {
+  text-align: center;
+}
 
 
 
