@@ -8,6 +8,15 @@
     <ul>
       <li><%=@bike.name %></li>
       <li><%= @bike.short_description %></li>
+      <li><% if current_user%>
+          <% if @bike.owner_id == current_user.id %>
+          <%= link_to "Edit detials for #{@bike.name}", edit_bike_path(@bike)%>
+          <%else %>
+          <%= link_to "Book this bike!", new_bike_booking_path(@bike) %>
+          <% end %>
+          <% else %>
+          <%= link_to "Book this bike!", new_user_session_path %>
+          <%end%></li>
     </ul>
   </div>
   </div>
@@ -41,15 +50,6 @@
       <li><%= owner.name %></li>
       <li><%= owner.bio%></li>
       <li><%="Member since: "%> <%=owner.created_at.to_date%></li>
-      <li><% if current_user%>
-          <% if @bike.owner_id == current_user.id %>
-          <%= link_to "Edit detials for #{@bike.name}", edit_bike_path(@bike)%>
-          <%else %>
-          <%= link_to "Book this bike!", new_bike_booking_path(@bike) %>
-          <% end %>
-          <% else %>
-          <%= link_to "Book this bike!", new_user_session_path %>
-          <%end%></li>
     </ul>
   </div>
 </div>
