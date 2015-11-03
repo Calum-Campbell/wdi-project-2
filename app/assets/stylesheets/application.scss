@@ -40,6 +40,7 @@
  min-height: 250px;
 }
 
+
 .full-screen {
   min-width: 100%;
   min-height: 400px;
@@ -109,6 +110,9 @@ footer {
 
 .user-show-left {
   text-align: center;
+  img {
+    border-radius:100%;
+  }
 }
 
 #user-bio{

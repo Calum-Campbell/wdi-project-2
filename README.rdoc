@@ -8,10 +8,9 @@ To do :
 SCSS
 - install carrierwaves
 - sort out booking page
-- sort out how it works
 - sort out rentals page
-- sort out backgrounds on home and about
 - sort out MyBookings page
+- sort out backgrounds on home and about
 - Clean all custom css
 
 Niceto Have:
