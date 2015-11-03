@@ -26,8 +26,8 @@ To do :
 - Add all the verifications for user sign up
 
 SCSS
-- Nav bar - Logo, list bike, register, login (opaque = 100%)
-- Home page
+- Nav bar - Logo, list bike, register, login (opaque = 100%) 
+- Home page - Get squares underneath with bikes in the link to bike page
 - login
 - Register
 - Usershow
