@@ -1,18 +1,34 @@
+<div class="row full-screen">
+  <div class="small-12 text-center large-12 columns zero-padding bike-show" style="background-image:url(<%= @bike.image %>); background-size: cover; background-position: center">
+  </div>
+</div>
+
+<div class="row heavy-left">
+  <div class="medium-9 columns">
+    <ul>
+      <li><%=@bike.name %></li>
+      <li><%= @bike.short_description %></li>
+    </ul>
+  </div>
+</div>
+
 <h1><%= @bike.name %>'s Page</h1>
 
-<%= image_tag @bike.image %> </br>
 <%= "Description:#{@bike.description}" %></br>
 <%= "Features on this bike :" %></br>
 <% @bike.features.each do |feature| %>
 <%= feature.name %> </br>
 <% end %>
+<% if current_user%>
 <% if @bike.owner_id == current_user.id %>
 <%= link_to "Edit detials for #{@bike.name}", edit_bike_path(@bike)%>
 <%else %>
 <%= link_to "Book this bike!", new_bike_booking_path(@bike) %>
 <% end %>
+<% else %>
+<%= link_to "Book this bike!", new_user_session_path %>
+<%end%>
 
 <div id="map"></div>
-
 
 

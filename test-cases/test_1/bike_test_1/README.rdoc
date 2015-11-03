@@ -28,10 +28,14 @@ To do :
 SCSS
 - Nav bar - Logo, list bike, register, login (opaque = 100%) 
 - Home page - Get squares underneath with bikes in the link to bike page
+
 - login
 - Register
 - Usershow
-- Bike show
+
+Niceto Have:
+Clearing lightbox on bikeshow
+
 
 
 
