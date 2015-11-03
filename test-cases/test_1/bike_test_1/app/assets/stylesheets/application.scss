@@ -25,6 +25,10 @@
 .zero-margin {
   margin: 0;
 }
+.spacer{
+  height: 20px;
+}
+
 
 .full-screen{
   min-width: 100%;
@@ -63,15 +67,30 @@
   list-style-type: none;
 }
 
-.center {
-  text-align: center;
-}
-
 .bike-show-right {
   text-align: center;
 }
 
+.feature {
+  text-align: center;
+  padding : 0px 20px;
+}
+// User show page
 
+.user-show-left {
+  text-align: center;
+}
+
+#user-bio{
+  text-align: justify;
+}
+.user-show-left li{
+  list-style-type: none;
+}
+
+.center {
+  text-align: center;
+}
 
 
 

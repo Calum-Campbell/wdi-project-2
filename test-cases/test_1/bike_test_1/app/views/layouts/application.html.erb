@@ -39,6 +39,7 @@
             <li class="active"><%= link_to "How It Works", about_path %></li>
             <li class="active"><%= link_to "List A Bike", new_bike_path %></li>
             <% if current_user %>
+            <li class="active"><%= link_to "My Profile", user_path(current_user) %></li>
             <li class="active"><%= link_to "Log Out", destroy_user_session_path, method: :delete  %></li>
             <% else %>
             <li class="active"><%= link_to "Sign Up", new_user_registration_path %></li>

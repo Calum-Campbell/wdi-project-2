@@ -35,8 +35,10 @@ SCSS
 
 Niceto Have:
 Clearing lightbox on bikeshow
+Features symbols seperated a bit
+RATINGS
 
-ONLY 2 BIKES LOADING!
+
 
 
 

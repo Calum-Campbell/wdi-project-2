@@ -46,7 +46,7 @@
     <ul>
       <li>Owner Information</li>
       <% owner = User.find(@bike.owner_id) %>
-      <li><%= image_tag(owner.image,height: '70', width:'70') %></li>
+      <li><%= link_to image_tag(owner.image,height: '70', width:'70'), user_path(owner) %></li>
       <li><%= owner.name %></li>
       <li><%= owner.bio%></li>
       <li><%="Member since: "%> <%=owner.created_at.to_date%></li>

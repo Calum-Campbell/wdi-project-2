@@ -19,6 +19,12 @@ b5 = Bike.create!({name: "Something bike", image:"https://lfgss.microco.sm/api/v
 
 b6 = Bike.create!({name: "Another bike", image:"https://lfgss.microco.sm/api/v1/files/9029df94af514f58c7d09bf642a9b5c66abe4b20.jpg", short_description:"Lovely new Racer located in East London close to Bethnal Green", description:"Full Racer descrition FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL ", address:"1 Gracechurch St, London EC3V 0DD, UK",owner_id:6})
 
+b7 = Bike.create!({name: "Johns second bike", image:"https://lfgss.microco.sm/api/v1/files/9029df94af514f58c7d09bf642a9b5c66abe4b20.jpg", short_description:"Lovely new Racer located in East London close to Bethnal Green", description:"Full Racer descrition FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL ", address:"1 Gracechurch St, London EC3V 0DD, UK",owner_id:1})
+
+b8 = Bike.create!({name: "Marks second bike", image:"https://lfgss.microco.sm/api/v1/files/9029df94af514f58c7d09bf642a9b5c66abe4b20.jpg", short_description:"Lovely new Racer located in East London close to Bethnal Green", description:"Full Racer descrition FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL ", address:"1 Gracechurch St, London EC3V 0DD, UK",owner_id:2})
+
+b9 = Bike.create!({name: "Marthas second bike", image:"https://lfgss.microco.sm/api/v1/files/9029df94af514f58c7d09bf642a9b5c66abe4b20.jpg", short_description:"Lovely new Racer located in East London close to Bethnal Green", description:"Full Racer descrition FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL FULL ", address:"1 Gracechurch St, London EC3V 0DD, UK",owner_id:3})
+
 ## Users##
 users = User.create!([{name:"John Smith", username:"John123", bio:"This is johns bio all about him..salsfkasdkl", image:"https://upload.wikimedia.org/wikipedia/en/5/50/Royall_Allah_In_Person_UNOI.png", password: "password", email:"john@john.com"},
   {name:"Matt Johnes", username:"Matt13", bio:"This is Matts bio all about him..salsfkasdkl", image:"http://thets-images.s3.amazonaws.com/angry.person.JPG", password: "password", email:"matt@matt.com"},
@@ -67,6 +73,21 @@ b6.features << helmet
 b6.features << lights
 b6.features << lock
 b6.save
+
+b7.features << helmet
+b7.features << lights
+b7.features << lock
+b7.save
+
+b8.features << helmet
+b8.features << lights
+b8.features << lock
+b8.save
+
+b9.features << helmet
+b9.features << lights
+b9.features << lock
+b9.save
 
 
 
