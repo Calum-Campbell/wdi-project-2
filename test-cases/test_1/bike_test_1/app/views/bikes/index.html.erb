@@ -1,18 +1,12 @@
-<div class="row full-screen">
+<div class="row full-screen background-2">
   <div class="small-12 text-center large-12 columns zero-padding">
-    <%= image_tag"front-page-background.jpg"%>
+    <h2>Rent a bike from someone like you</h2>
+    <h3>Save money, meet awesome people, and consume less</h3>
   </div>
 </div>
-
+<div class='spacer'></div>
 <div class="row">
   <ul class="small-block-grid-1 medium-block-grid-3 columns">
-    <% @bikes.each do |bike| %>
-     <li class="bike">
-      <%= link_to image_tag(bike.image), bike_path(bike)%>
-      <%= link_to "#{bike.name}", bike_path(bike) %> </br>
-      <%= link_to "#{bike.address}", bike_path(bike) %>
-
-    </li>  
-    <% end %>
+    <%= render @bikes %>
   </ul>
 </div>

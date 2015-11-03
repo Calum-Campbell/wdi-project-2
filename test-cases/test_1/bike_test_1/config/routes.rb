@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   root "bikes#index"
   resources :bikes
   devise_for :users
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show] do 
+    member do 
+      get "bookings"
+      get "rentals"
+    end
+  end
 
   resources :features
 

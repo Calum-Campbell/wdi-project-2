@@ -1,0 +1,29 @@
+<div class ="row center">
+  <div class="small-12 large-12 columns"><%= "Your rentals that are coming up :" %></div> 
+</div>
+
+​<div class="row small-12 medium-4">
+  <ul class="row">
+    <div class="small-block-grid-1 medium-block-grid-3 columns bike-show-right">
+      <% rent_count = 0 %>
+      <% Booking.all.each do |booking| %> 
+        <% bikeid = booking.bike_id %> 
+        <% riderid = booking.rider_id %> 
+        <% bike = Bike.find(bikeid) %> 
+        <% rider = User.find(riderid) %>
+        <% if bike.owner_id == current_user.id  %> 
+            <li> <%= "Your bike '#{bike.name}' is booked out on #{booking.start_time} for #{booking.length} hours by #{rider.name}"%> 
+            </li>
+            <% rent_count += 1%>
+        <% end %>
+      <% end %> 
+  <% if rent_count == 0 %>
+    <li><%= "You dont have any bike out to rent at the momnet!"%></li>
+  <% end %> 
+
+    </ul>
+  </div>
+</div>
+<div class ="row center">
+  <div class="small-12 large-12 columns"><%= "Your rental bookings:"  %></div> 
+</div>

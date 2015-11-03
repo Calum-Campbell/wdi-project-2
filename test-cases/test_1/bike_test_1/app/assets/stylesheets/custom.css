@@ -2,6 +2,15 @@
   font-family: Helvetica;
 }
 
+header {
+  background: #fff;
+}
+
+header .title-area .name h1 a {
+  color: #f00;
+  font-weight: 700;
+}
+
 .wrapper {
   width:60%;
   border:1px solid gray;

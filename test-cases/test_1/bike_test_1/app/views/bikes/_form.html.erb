@@ -1,13 +1,27 @@
-<%= form_for @bike do |f| %>
-  <%= render 'errors' %>
-  <%= f.text_field 'name', placeholder: 'Bike Name'%> </br>
-  <%= f.text_field 'short_description', placeholder: 'Short Bike Desciption'%> </br>
-  <%= f.text_field 'description', placeholder: 'Bike Desciption'%> </br>
-  <%= f.text_area 'image', placeholder: 'Bike Image URL'%> </br>
-  <%= f.text_area 'address', placeholder: 'Bike drop off address'%> </br>
-  
-  <%=f.collection_check_boxes(:feature_ids, Feature.all, :id, :name) %>
+<div class='spacer'></div>
+  <div class ="row center">
+    <div class="small-12 large-12 columns">
+      <ul class='no-bullets'> 
+            <%= form_for @bike do |f| %>
+            <%= render 'errors' %>
+        <li>Name of Bike</li>    
+        <li><%= f.text_field 'name', placeholder: 'Bike Name'%></li>
+        <li>Tag Line for the bike</li>  
+        <li><%= f.text_field 'short_description', placeholder: 'Short Bike Desciption'%></li>
+        <li>Full Desciption of Bike</li>  
+        <li><%= f.text_field 'description', placeholder: 'Bike Desciption'%></li>
+        <li>Image URL</li>  
+        <li><%= f.text_area 'image', placeholder: 'Bike Image URL'%></li>
+        <li>Adress of the bike pick/up drop of location</li>  
+        <li><%= f.text_area 'address', placeholder: 'Bike drop off address'%></li>
+        <li>Extras that your bike has:</li>  
+        <li><%=f.collection_check_boxes(:feature_ids, Feature.all, :id, :name) %></li>
+        <li><%= f.submit 'Submit', class: "button expand" %></li> 
+            <% end %>
+      </ul>
+    </div> 
+</div>
 
 
-  <%= f.submit 'Submit' %>
-<% end %>
+
+

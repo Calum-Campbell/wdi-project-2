@@ -1,4 +1,13 @@
-<h2>Log in</h2>
+<div class='spacer'></div>
+<div class='spacer'></div>
+<div class='spacer'></div>
+<div class='spacer'></div>
+<div class='spacer'></div>
+<div class='spacer'></div>
+<div class='spacer'></div>
+  <div class ="row center">
+    <div class="small-12 large-12 columns">
+      <ul class='no-bullets'>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -19,8 +28,11 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class: "button expand" %>
   </div>
 <% end %>
+      </ul>
+    </div> 
+</div>
 
-<%= render "devise/shared/links" %>
+<% render "devise/shared/links" %>
