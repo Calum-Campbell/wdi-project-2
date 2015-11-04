@@ -17,6 +17,7 @@ Niceto Have:
 Clearing lightbox on bikeshow
 Features symbols seperated a bit
 RATINGS
+Little profile pic in top right corner
 
 
 
