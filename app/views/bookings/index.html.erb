@@ -1,28 +1,39 @@
-<h3> Bookings for <%= @bike.name %></h3>
-<table class="bookings_table">
-  <tr>
-    <th>Start</th>
-    <th>End</th>
-    <th>Rider name</th>
-    <th>Owner Name</th>
-  </tr>
-  
-  <% @bookings.each do |booking| %>
-  <tr>
-    <td>
-      <%= booking.start_time.strftime('%e %b %Y %H:%M%p') %>
-    </td>
-    <td>
-      <%= (booking.calculate_end_time + 60).strftime('%e %b %Y %H:%M%p') %>
-    </td>
-    <% rider = User.find(booking.rider_id)%>
-    <% owner = User.find(Bike.find(booking.bike_id).owner_id)%>
-    <td><%= link_to "#{rider.name}", user_path(rider) %></td>
-    <td><%= link_to "#{owner.name}", user_path(owner) %></td>
-    <td><%= link_to "Delete", bike_booking_path(@bike, booking), data: { confirm: 'Are you sure?' }, method: :delete %>
-    </td>
-    <td><%= link_to "Edit", edit_bike_booking_path(@bike, booking) %>
-    </td>
-  </tr>
-  <% end %>
-</table>
+<div class='spacer'></div>
+<div class="center"><h2> Bookings for <%= @bike.name %></h2></div>
+
+<% @bookings.each do |booking| %>
+<div class ="row center no-bullets">
+<div class= "small-12 medium-4 columns">
+ <%= link_to image_tag(@bike.image), bike_path(@bike) %> 
+</div>
+  <div class="small-12 medium-4 columns">
+
+    <ul>
+      <h3><li>Start</li></h3>
+      <li>
+        <%= booking.start_time.strftime('%e %b %Y %H:%M%p') %>
+      </li>
+      <h3><li>End</li></h3>
+      <li>
+        <%= (booking.calculate_end_time + 60).strftime('%e %b %Y %H:%M%p') %>
+      </li>
+      <h3><li>Rider name</li></h3>
+      <% rider = User.find(booking.rider_id)%>
+      <% owner = User.find(Bike.find(booking.bike_id).owner_id)%>
+      <li><%= link_to "#{rider.name}", user_path(rider) %></li>
+
+      <h3><li>Owner Name</li></h3>
+      <li><%= link_to "#{owner.name}", user_path(owner) %></li>
+    </ul>
+  </div> 
+
+  <div class="small-12 medium-4 columns">
+  <ul>
+    <li><%= link_to "Delete", bike_booking_path(@bike, booking), data: { confirm: 'Are you sure?' }, method: :delete %>
+    </li>
+    <li><%= link_to "Edit", edit_bike_booking_path(@bike, booking) %>
+    </li>
+  </ul>
+  </div>
+</div>
+<% end %>

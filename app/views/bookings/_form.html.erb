@@ -1,12 +1,12 @@
+<ul>
+  <%= form_for([@bike, @booking]) do |f| %>
+  
+  <li>  <%= f.label 'start_time', 'Start Date / Time' %> </li>
+  <li> <%= f.datetime_select :start_time, { minute_step: 15 } %> </li>
 
-<%= form_for([@bike, @booking]) do |f| %>
-  <p>
-    <%= f.label 'start_time', 'Start time' %>
-    <%= f.datetime_select :start_time, { minute_step: 15 } %>
-  </p>
-  <p>
-    <%= f.label 'length', 'Length of booking in hours' %>
-    <%= f.number_field 'length', min: 1 %>
-  </p>
-  <%= f.submit 'Submit' %>
-<% end %> 
+  <li>  <%= f.label 'length', 'Length of booking in hours' %> </li>
+  <li> <%= f.number_field 'length', hour: 1 %> </li>
+
+  <%= f.submit 'Submit', class: "button expand" %>
+  <% end %> 
+</ul>

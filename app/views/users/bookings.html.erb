@@ -1,23 +1,25 @@
-<div class="row small-12 medium-4">
-  <ul class="row">
-    <div class="small-block-grid-1 medium-block-grid-3 columns bike-show-right">
-      <% count = 0 %>
-      <% @user.bookings.each do |booking| %>
-      <% count +=1 %>
-      <% bike = Bike.find(booking.bike_id) %>
-      <li><%= "Booking :" %>
-        <%= "You have booked #{bike.name}, at: #{booking.start_time.strftime("%H:%M")}, for #{booking.length} hours" %>
-      </li>
-      <% end %>
-      <% if count == 0 %>
-      <li><%= "You dont have any personal bike bookings at the moment!"%> </br>
-      </li>
-      <% end %> 
-    </ul>
-  </div>
+<div class='spacer'></div>
+<div class ="row center no-bullets">
+  <div class="small-12 large-12 columns"> 
+    <ul>    
+     <% count = 0 %>
+     <% @user.bookings.each do |booking| %>
+     <% count +=1 %>
+     <% bike = Bike.find(booking.bike_id) %>
+     <li><%= "Booking :" %> </li>
+     <li><%= "You have booked #{bike.name}, on #{booking.start_time.to_date} at: #{booking.start_time.strftime("%H:%M")}, for #{booking.length} hours" %></li>
+    <% end %>
+    <% if count == 0 %>
+    <li><%= "You dont have any personal bike bookings at the moment!"%> </br>
+    </li>
+    <% end %> 
+  </ul>
+</div>
 </div>
 <div class ="row center">
   <div class="small-12 large-12 columns"><%= link_to "Book a bike!", root_path %></div> 
 </div>
+
+
 <div class="spacer">
 </div>

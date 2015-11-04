@@ -1,69 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>MyBike</title>
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+<head>
+  <title>MyBike</title>
+  <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <%= include_gon %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application' %>
-    <%= csrf_meta_tags %>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application"%>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <header>
-      <nav class="top-bar row" data-topbar role="navigation">
-        <ul class="title-area">
-          <li class="name">
-            <h1><a href="/">MyBike</a></h1>
-          </li>
-          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+  <%= include_gon %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= javascript_include_tag "application"%>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <nav class="top-bar row" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">MyBike</a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li><%= link_to "How It Works", about_path %></li>
+          <% if current_user %>
+          <li><%= link_to "List A Bike", new_bike_path %></li>
+          <li><%= link_to "Rentals", rentals_user_path(current_user)%></li>
+          <li><%= link_to "Bookings", bookings_user_path(current_user)%></li>
+          <li><%= link_to "My Profile", user_path(current_user) %></li>
+          <li><%= link_to "Log Out", destroy_user_session_path, method: :delete  %></li>
+          <% else %>
+          <li><%= link_to "List A Bike", new_user_registration_path %></li>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <li><%= link_to "Log In", new_user_session_path %></li> 
+          <% end %>
         </ul>
 
-        <section class="top-bar-section">
-          <!-- Right Nav Section -->
-          <ul class="right">
-            <li><%= link_to "How It Works", about_path %></li>
-            <% if current_user %>
-            <li><%= link_to "List A Bike", new_bike_path %></li>
-            <li><%= link_to "Rentals", bookings_user_path(current_user) %></li>
-            <li><%= link_to "Bookings", rentals_user_path(current_user) %></li>
-            <li><%= link_to "My Profile", user_path(current_user) %></li>
-            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete  %></li>
-            <% else %>
-            <li><%= link_to "List A Bike", new_user_registration_path %></li>
-            <li><%= link_to "Sign Up", new_user_registration_path %></li>
-            <li><%= link_to "Log In", new_user_session_path %></li> 
-            <% end %>
-          </ul>
+        <!-- Left Nav Section -->
+        <ul class="left">
+          <li><a href="#"></a></li>
+        </ul>
+      </section>
+    </nav>
+  </header>
+  <% flash.each do |name, message| %>
+  <div class="flash-message flash-message-<%= name %>">
+    <%= message %>
+  </div>
+  <% end %>
 
-          <!-- Left Nav Section -->
-          <ul class="left">
-            <li><a href="#"></a></li>
-          </ul>
-        </section>
-      </nav>
-    </header>
-    <% flash.each do |name, message| %>
-      <div class="flash-message flash-message-<%= name %>">
-        <%= message %>
-      </div>
-    <% end %>
-
-    <%= yield %>
-    <footer>
-      <div class="row">
-        <div class="small-2 large-4 columns">...</div>
-        <div class="small-4 large-4 columns">...</div>
-        <div class="small-6 large-4 columns">...</div>
-      </div>
-    </footer>
-  </body>
+  <%= yield %>
+  <footer>
+    <div class="row">
+      <div class="small-2 large-4 columns">...</div>
+      <div class="small-4 large-4 columns">...</div>
+      <div class="small-6 large-4 columns">...</div>
+    </div>
+  </footer>
+</body>
 </html>
