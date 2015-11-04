@@ -7,9 +7,9 @@
 <div class="row heavy-left center">
   <div class="medium-9 columns">
     <ul>
-      <li><%=@bike.name %></li>
+      <li><h3><%=@bike.name %></h3></li>
       <li><%= @bike.short_description %></li>
-      <li><% if current_user%>
+      <li id="user-button" class="button expand success"><% if current_user%>
           <% if @bike.owner_id == current_user.id %>
           <%= link_to "Edit detials for #{@bike.name}", edit_bike_path(@bike)%>
           <%else %>
@@ -25,8 +25,8 @@
 <div class="row heavy-left">
   <div class="medium-9 columns">
     <ul>
-      <li><h2>Description</h2></li>
-      <li><%= @bike.description %></li>
+      <li class="center"><h3>Description</h3></li>
+      <li class="content bike-info"><%= @bike.description %></li>
       <li class="center"><%= "Features"%></li>
       <li class='center small-image'><% @bike.features.each do |feature| %>
           <% if feature.name == "Helmet" %>
@@ -45,10 +45,10 @@
   </div>
   <div class="medium-3 columns bike-show-right profile-deets">
     <ul>
-      <li>Owner Information</li>
+      <li>Owner</li>
       <% owner = User.find(@bike.owner_id) %>
       <li><%= link_to image_tag(owner.image,height: '70', width:'70'), user_path(owner) %></li>
-      <li><%= owner.name %></li>
+      <li><strong><%= owner.name %></strong></li>
       <li><%= owner.bio%></li>
       <li><%="Member since: "%> <%=owner.created_at.to_date%></li>
     </ul>
