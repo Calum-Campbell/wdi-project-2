@@ -33,6 +33,12 @@ users = User.create!([{name:"Chris Smith", username:"John123", bio:"This is john
   {name:"Mark Marky", username:"Marky12", bio:"This is Marks bio all about him..salsfkasdkl", image:"max.jpg", password: "password", email:"mark@mark.com"},
   {name:"Susan Sus", username:"Susie1", bio:"This is Susies bio all about him..salsfkasdkl", image:"jackm.jpg", password: "password", email:"susan@susan.com"}])
 
+### Bookings###
+#<Booking id: 1, start_time: "2018-11-04 09:00:00", end_time: "2018-11-04 10:59:00", length: 2, bike_id: 3, rider_id: 2>,
+
+bookings = Booking.create!([{start_time: "2015-11-05 09:00:00", end_time: "2015-11-05 10:59:00", length: 2, bike_id: 3, rider_id: 2},{start_time: "2015-11-07 011:00:00", end_time: "2015-11-05 15:59:00", length: 5, bike_id: 1, rider_id: 2},{start_time: "2015-11-07 011:00:00", end_time: "2015-11-05 15:59:00", length: 5, bike_id: 3, rider_id: 1
+  }])
+
 ## Features
 helmet    = Feature.create!([{name: "Helmet"}])
 lights    = Feature.create!([{name: "Lights"}])
