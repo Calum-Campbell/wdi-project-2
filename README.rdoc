@@ -7,17 +7,24 @@ To do :
 
 SCSS
 - install carrierwaves
-- sort out booking page
-- sort out rentals page
-- sort out MyBookings page
 - sort out backgrounds on home and about
 - Clean all custom css
+
+-Your booking is complete page REDIRECT
+-How it works page
+- Spaces on rental pages 
+- Double calendar stuff.
+
 
 Niceto Have:
 Clearing lightbox on bikeshow
 Features symbols seperated a bit
 RATINGS
 Little profile pic in top right corner
+
+
+
+
 
 
 

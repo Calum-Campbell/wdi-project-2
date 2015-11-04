@@ -10,7 +10,7 @@
   <% if bike.owner_id == current_user.id  %> 
   <div class ="row center no-bullets">
     <div class="small-12 medium-4 columns">
-      <%= link_to image_tag(bike.image), bike_path(bike) %> 
+      <%= link_to image_tag(bike.bike_image), bike_path(bike) %> 
     </div>
     <div class="small-12 medium-4 columns">
       <ul>
@@ -19,7 +19,7 @@
       </ul>
     </div>
     <div class="small-12 medium-4 columns">
-      <h3>buttons?/callandar</h3>
+      <h3>buttons?/calendar</h3>
     </div>
   </div>
   <% end %>
@@ -28,11 +28,10 @@
   <% end %> 
 
 
+
   <div class ="row center">
     <div class="small-12 large-12 columns"><%= link_to "Book a bike!", root_path %></div> 
   </div>
 
 
-  <div class="spacer">
-  </div>
 

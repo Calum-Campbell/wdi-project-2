@@ -50,7 +50,7 @@ end
 private
 
 def bike_params
-  params.require(:bike).permit(:name, :image, :description, :address, :lattitude, :longitude, feature_ids:[])
+  params.require(:bike).permit(:name, :image, :description, :address, :lattitude, :longitude, :bike_image, feature_ids:[])
 end
 end
 

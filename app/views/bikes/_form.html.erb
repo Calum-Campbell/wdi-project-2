@@ -12,6 +12,11 @@
         <li><%= f.text_field 'description', placeholder: 'Bike Desciption'%></li>
         <li>Image URL</li>  
         <li><%= f.text_area 'image', placeholder: 'Bike Image URL'%></li>
+
+        <li>Image Uploaad</li>
+        <li><%= f.label :bike_image %></li>
+        <li><%= f.file_field :bike_image %></li>
+        
         <li>Adress of the bike pick/up drop of location</li>  
         <li><%= f.text_area 'address', placeholder: 'Bike drop off address'%></li>
         <li>Extras that your bike has:</li>  

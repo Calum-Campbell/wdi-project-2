@@ -1,7 +1,8 @@
 <div class="row full-screen">
-  <div class="small-12 text-center large-12 columns zero-padding bike-show" style="background-image:url(<%= @bike.image %>); background-size: cover; background-position: center">
+  <div class="small-12 text-center large-12 columns zero-padding bike-show" style="background-image:url(<%= @bike.bike_image %>); background-size: cover; background-position: center">
   </div>
 </div>
+
 
 <div class="row heavy-left center">
   <div class="medium-9 columns">
@@ -27,7 +28,7 @@
       <li><h2>Description</h2></li>
       <li><%= @bike.description %></li>
       <li class="center"><%= "Features"%></li>
-      <li class='center'><% @bike.features.each do |feature| %>
+      <li class='center small-image'><% @bike.features.each do |feature| %>
           <% if feature.name == "Helmet" %>
           <%= image_tag("#{feature.name}.png",height: '50', width:'50')%>
           <% elsif feature.name == "Flask" %>
