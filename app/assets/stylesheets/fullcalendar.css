@@ -9,6 +9,15 @@
 	direction: ltr;
 	text-align: left;
 	}
+
+.fc.fc-ltr{
+	float: right;
+	width: 50%;
+}
+
+h2{
+	font-size: 13px;
+}
 	
 .fc table {
 	border-collapse: collapse;

@@ -1,5 +1,5 @@
 <div class='spacer'></div>
-<div class="center"><h2> Bookings for <%= @bike.name %></h2></div>
+<div class="center"><h3> Bookings for <%= @bike.name %></h3></div>
 
 <% @bookings.each do |booking| %>
 <div class ="row center no-bullets">
@@ -9,30 +9,34 @@
   <div class="small-12 medium-4 columns">
 
     <ul>
-      <h3><li>Start</li></h3>
+      <h4><li>Start</li></h4>
       <li>
         <%= booking.start_time.strftime('%e %b %Y %H:%M%p') %>
       </li>
-      <h3><li>End</li></h3>
+      <h4><li>End</li></h4>
       <li>
         <%= (booking.calculate_end_time + 60).strftime('%e %b %Y %H:%M%p') %>
       </li>
-      <h3><li>Rider name</li></h3>
-      <% rider = User.find(booking.rider_id)%>
-      <% owner = User.find(Bike.find(booking.bike_id).owner_id)%>
-      <li><%= link_to "#{rider.name}", user_path(rider) %></li>
-
-      <h3><li>Owner Name</li></h3>
-      <li><%= link_to "#{owner.name}", user_path(owner) %></li>
-    </ul>
+      </ul>
   </div> 
 
   <div class="small-12 medium-4 columns">
   <ul>
+    <h4><li>Rider name</li></h4>
+    <% rider = User.find(booking.rider_id)%>
+    <% owner = User.find(Bike.find(booking.bike_id).owner_id)%>
+    <li><%= link_to "#{rider.name}", user_path(rider) %></li>
+
+    <h4><li>Owner Name</li></h4>
+    <li><%= link_to "#{owner.name}", user_path(owner) %></li>
+    <div class="small-6 medium-6 columns">
     <li><%= link_to "Delete", bike_booking_path(@bike, booking), data: { confirm: 'Are you sure?' }, method: :delete %>
     </li>
+    </div>
+    <div class="small-6 medium-6 columns">
     <li><%= link_to "Edit", edit_bike_booking_path(@bike, booking) %>
     </li>
+    </div>
   </ul>
   </div>
 </div>
