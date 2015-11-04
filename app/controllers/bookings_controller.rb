@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     # @booking =  Booking.new(params[:booking].permit(:bike_id, :start_time, :length))
     @booking.bike = @bike
     if @booking.save
-      redirect_to bike_bookings_path(@bike, method: :get)
+      redirect_to bookings_user_path(id: current_user.id, method: :get)
     else
       render 'new'
     end

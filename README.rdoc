@@ -1,26 +1,20 @@
-
-To do :
-- SCSS (wireframe?)
-- Add some pricing/profit things
-- Stop being able to go to other pages when not logged in
-- Add all the verifications for user sign up
-
-SCSS
-- install carrierwaves
-- sort out backgrounds on home and about
-- Clean all custom css
-
--Your booking is complete page REDIRECT
--How it works page
-- Spaces on rental pages 
-- Double calendar stuff.
-
-
 Niceto Have:
 Clearing lightbox on bikeshow
 Features symbols seperated a bit
 RATINGS
 Little profile pic in top right corner
+
+
+-How it works page
+- sort out backgrounds on home and about
+- Clean all custom css
+-Your booking is complete page REDIRECT
+
+
+
+
+- Double calendar stuff.
+
 
 
 
