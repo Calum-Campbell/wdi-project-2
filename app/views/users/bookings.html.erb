@@ -4,16 +4,19 @@
 <% bike = Bike.find(booking.bike_id) %>
 
 <div class ="row center no-bullets">
-    <div class="small-12 medium-4 columns">
-        <%= link_to image_tag(bike.bike_image), bike_path(bike) %> 
-    </div>
-    <div class="small-12 medium-4 columns"> 
-        <ul>    
-           <li><%= "You have booked #{bike.name}, on #{booking.start_time.to_date} at: #{booking.start_time.strftime("%H:%M")}, for #{booking.length} hours" %></li>
-       </ul>
-   </div>
-   <div class='small-12 medium-4 columns'>
-    <h1>Buttons?s</h1>
+  <div class="small-12 medium-4 columns">
+    <%= link_to image_tag(bike.bike_image), bike_path(bike) %> 
+  </div>
+  <div class="small-12 medium-4 columns"> 
+    <ul class="bike-info">    
+     <li><%= "You have booked #{bike.name}, on #{booking.start_time.to_date} at: #{booking.start_time.strftime("%H:%M")}, for #{booking.length} hours" %></li>
+   </ul>
+ </div>
+ <div class='small-12 medium-4 columns'>
+ <ul class="bike-buttons">
+    <li><%=link_to "Edit Booking", edit_bike_booking_path(bike, booking)%></li>
+    <li><%= link_to "Delete Booking", bike_booking_path(bike, booking), data: { confirm: 'Are you sure?' }, method: :delete %></li>
+  </ul>
 </div>
 </div>
 <div class="spacer">
@@ -21,7 +24,7 @@
 <% end %>
 
 <div class ="row center">
-  <div class="small-12 large-12 columns"><%= link_to "Book a bike!", root_path %></div> 
+  <div id='user-button' class="small-12 large-12 columns button success expand user-button""><%= link_to "Book a bike!", root_path %></div> 
 </div>
 
 <div class="spacer">

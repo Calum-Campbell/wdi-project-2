@@ -6,13 +6,10 @@ Little profile pic in top right corner
 
 
 -How it works page
-- sort out backgrounds on home and about
 - Clean all custom css
--Your booking is complete page REDIRECT
 
 
-
-
+- Buttons on rental and booking pages
 - Double calendar stuff.
 
 
