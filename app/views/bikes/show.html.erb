@@ -4,58 +4,60 @@
 </div>
 
 
-<div class="row heavy-left center">
+<div class="row heavy-left center bike-show-content">
   <div class="medium-9 columns">
     <ul>
       <li><h3><%=@bike.name %></h3></li>
       <li><%= @bike.short_description %></li>
-      <li id="user-button" class="button expand success"><% if current_user%>
-          <% if @bike.owner_id == current_user.id %>
-          <%= link_to "Edit detials for #{@bike.name}", edit_bike_path(@bike)%>
-          <%else %>
-          <%= link_to "Book this bike!", new_bike_booking_path(@bike) %>
-          <% end %>
-          <% else %>
-          <%= link_to "Book this bike!", new_user_session_path %>
-          <%end%></li>
+      <li id="user-button">
+        <% if current_user%>
+        <% if @bike.owner_id == current_user.id %>
+        <%= link_to "Edit detials for #{@bike.name}", edit_bike_path(@bike), class: "button" %>
+        <%else %>
+        <%= link_to "Book this bike!", new_bike_booking_path(@bike), class: "button" %>
+        <% end %>
+        <% else %>
+        <%= link_to "Book this bike!", new_user_session_path, class: "button" %>
+        <%end%>
+      </li>
     </ul>
   </div>
-  </div>
+</div>
 
 <div class="row heavy-left">
   <div class="medium-9 columns">
     <ul>
       <li class="center"><h3>Description</h3></li>
       <li class="content bike-info"><%= @bike.description %></li>
-      <li class="center"><%= "Features"%></li>
+      <li class="center"><h3><%= "Features"%></h3></li>
       <li class='center small-image'><% @bike.features.each do |feature| %>
-          <% if feature.name == "Helmet" %>
-          <%= image_tag("#{feature.name}.png",height: '50', width:'50')%>
-          <% elsif feature.name == "Flask" %>
-          <%= image_tag("#{feature.name}.png",height: '50', width:'50')%>
-          <% elsif feature.name == "Mud_guard" %>
-          <%= image_tag("#{feature.name}.png",height: '50', width:'50')%>
-          <% elsif feature.name == "Lights" %>
-          <%= image_tag("#{feature.name}.png",height: '50', width:'50')%>
-          <% elsif feature.name == "Lock" %>
-          <%= image_tag("#{feature.name}.png",height: '50', width:'50')%>
-          <% end %>
-          <% end %></li>
-    </ul>
+        <% if feature.name == "Helmet" %>
+        <%= image_tag("#{feature.name}.png",height: '50', width:'50')%>
+        <% elsif feature.name == "Flask" %>
+        <%= image_tag("#{feature.name}.png",height: '50', width:'50')%>
+        <% elsif feature.name == "Mud_guard" %>
+        <%= image_tag("#{feature.name}.png",height: '50', width:'50')%>
+        <% elsif feature.name == "Lights" %>
+        <%= image_tag("#{feature.name}.png",height: '50', width:'50')%>
+        <% elsif feature.name == "Lock" %>
+        <%= image_tag("#{feature.name}.png",height: '50', width:'50')%>
+        <% end %>
+        <% end %></li>
+      </ul>
+    </div>
+    <div class="medium-3 columns bike-show-right profile-deets">
+      <ul>
+        <li>Owner</li>
+        <% owner = User.find(@bike.owner_id) %>
+        <li><%= link_to image_tag(owner.image,height: '70', width:'70'), user_path(owner) %></li>
+        <li><strong><%= owner.name %></strong></li>
+        <li><%= owner.bio%></li>
+        <li><%="Member since: "%> <%=owner.created_at.to_date%></li>
+      </ul>
+    </div>
   </div>
-  <div class="medium-3 columns bike-show-right profile-deets">
-    <ul>
-      <li>Owner</li>
-      <% owner = User.find(@bike.owner_id) %>
-      <li><%= link_to image_tag(owner.image,height: '70', width:'70'), user_path(owner) %></li>
-      <li><strong><%= owner.name %></strong></li>
-      <li><%= owner.bio%></li>
-      <li><%="Member since: "%> <%=owner.created_at.to_date%></li>
-    </ul>
-  </div>
-</div>
 
 
-<div id="map"></div>
+  <div id="map"></div>
 
 

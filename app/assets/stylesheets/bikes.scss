@@ -7,6 +7,7 @@
     img {
       height:100px;
       width:100px;
+      margin: 10px;
     }
   }
 
@@ -19,7 +20,11 @@
 }
 
 .bike-info {
-  padding-top: 60px;
+  padding: 40px;
+}
+
+.bike-show-content ul li:nth-child(2) {
+  margin-bottom: 20px;
 }
 
 

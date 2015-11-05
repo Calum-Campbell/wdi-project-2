@@ -10,6 +10,7 @@ $(function(){
       var marker = new google.maps.Marker({
         position: myLatLng,
         map: map,
+        icon: 'http://i.imgur.com/wRTpUCC.png',
         title: 'Hello World!'
       });
     }

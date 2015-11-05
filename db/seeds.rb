@@ -53,7 +53,7 @@ bookings = Booking.create!([{start_time: "2015-11-06 09:00:00", end_time: "2015-
 ## Features
 helmet    = Feature.create!([{name: "Helmet"}])
 lights    = Feature.create!([{name: "Lights"}])
-mud_guard = Feature.create!([{name: "Mud_guard"}])
+mud_guard = Feature.create!([{name: "Mud Guard"}])
 lock      = Feature.create!([{name: "Lock"}])
 flask      = Feature.create!([{name: "Flask"}])
 
@@ -92,11 +92,13 @@ b6.save
 b7.features << helmet
 b7.features << lights
 b7.features << lock
+b5.features << flask
 b7.save
 
 b8.features << helmet
 b8.features << lights
 b8.features << lock
+b5.features << flask
 b8.save
 
 b9.features << helmet

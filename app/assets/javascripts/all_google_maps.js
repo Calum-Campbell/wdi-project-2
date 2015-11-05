@@ -15,6 +15,7 @@ $(function(){
         position: myLatLng,
         map: map,
         title: 'Hello World!',
+        icon: 'http://i.imgur.com/wRTpUCC.png',
         url: "/bikes/" + gon.bikes[i].id
       });
       google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
