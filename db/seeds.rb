@@ -3,11 +3,11 @@ Bike.destroy_all
 Feature.destroy_all
 
 ## Users##
-u1 = User.create!(name:"Chris Brady", username:"Chris123", bio:"London cyclist who has a coupld of spare bike lying around that I'm happy to rent!", image:"chris.jpg", password: "password", email:"chris@chris.com")
-u2 = User.create!(name:"Jack Johnes", username:"Jack13", bio:"London cyclist who has a coupld of spare bike lying around that I'm happy to rent!", image:"jackb.jpg", password: "password", email:"matt@matt.com")
-u3 = User.create!(name:"Ciaran Davies", username:"Ciaz13", bio:"London cyclist who has a coupld of spare bike lying around that I'm happy to rent!", image:"ciaran.jpg", password: "password", email:"ciaran@ciaran.com")
-u4 = User.create!(name:"Jack Morely", username:"Jack1", bio:"London cyclist who has a coupld of spare bike lying around that I'm happy to rent!", image:"jackm.jpg", password: "password", email:"jackm@jackm.com")
-u5 = User.create!(name:"Max Marky", username:"Max12", bio:"London cyclist who has a coupld of spare bike lying around that I'm happy to rent!", image:"max.jpg", password: "password", email:"maxw@maxw.com")
+u1 = User.create!(name:"Chris Brady", username:"Chris123", bio:"London cyclist who has a couple of spare bike lying around that I'm happy to rent!", image:"chris.jpg", password: "password", email:"chris@chris.com")
+u2 = User.create!(name:"Jack Johnes", username:"Jack13", bio:"London cyclist who has a couple of spare bike lying around that I'm happy to rent!", image:"jackb.jpg", password: "password", email:"matt@matt.com")
+u3 = User.create!(name:"Ciaran Davies", username:"Ciaz13", bio:"London cyclist who has a couple of spare bike lying around that I'm happy to rent!", image:"ciaran.jpg", password: "password", email:"ciaran@ciaran.com")
+u4 = User.create!(name:"Jack Morely", username:"Jack1", bio:"London cyclist who has a couple of spare bike lying around that I'm happy to rent!", image:"jackm.jpg", password: "password", email:"jackm@jackm.com")
+u5 = User.create!(name:"Max Marky", username:"Max12", bio:"London cyclist who has a couple of spare bike lying around that I'm happy to rent!", image:"max.jpg", password: "password", email:"maxw@maxw.com")
 u6 = User.create!(name:"Max Sharp", username:"Maxy1", bio:"This is Susies bio all about him..salsfkasdkl", image:"max.jpg", password: "password", email:"maxs@maxs.com")
 
 ##Bikes##
