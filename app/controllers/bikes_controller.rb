@@ -2,6 +2,7 @@ class BikesController < ApplicationController
 
   def index
     @bikes = Bike.all
+    gon.bikes = Bike.all
   end
 
   def new
@@ -12,6 +13,7 @@ class BikesController < ApplicationController
     @bike = Bike.find(params[:id])
     gon.latitude = @bike.latitude
     gon.longitude = @bike.longitude
+
   end
 
   def create

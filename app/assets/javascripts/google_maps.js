@@ -2,7 +2,6 @@ $(function(){
   if ($("#map").length > 0) {
     function initialize() {
       var myLatLng = {lat: gon.latitude, lng: gon.longitude};
-
       var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: myLatLng
