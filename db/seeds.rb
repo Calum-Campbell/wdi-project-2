@@ -19,7 +19,7 @@ b3 = u3.bikes.create!({name: "Generic Vintage", image:"https://s-media-cache-ak0
 
 b4 = u4.bikes.create!({name: "Racer bike", image:"http://www.theracingbicycle.com/images/Eagle_Quad_full.bmp",short_description:"Lovely new Racer located in East London close to Bethnal Green", description:"This is the full description of my Bike. The bike is an extremely reliable bike that come with numerouse features, including inflated tyres and extreme style. The perfect bike if you want to avoide looking like Boris Johnson and rent something with a bit of style. I am listing the bike as I currently have no need for my second bike and hope others can enjoy it as much as me!", address:"35 The, Jubilee Market Hall, 30 Tavistock Ct, London WC2E 8RF", bike_image: File.open(Rails.root + "app/assets/images/bike4.jpg")})
 
-b5 = u5.bikes.create!({name: "Blue bike", image:"http://www.roadbikereview.com/reviews/wp-content/uploads/2012/11/25A_4_a.jpg",short_description:"Lovely new Racer located in East London close to Bethnal Green", description:"This is the full description of my Bike. The bike is an extremely reliable bike that come with numerouse features, including inflated tyres and extreme style. The perfect bike if you want to avoide looking like Boris Johnson and rent something with a bit of style. I am listing the bike as I currently have no need for my second bike and hope others can enjoy it as much as me!",address:"City Hall The Queen’s Walk More London London SE1 2AA", bike_image: File.open(Rails.root + "app/assets/images/bike5.jpg")})
+b5 = u5.bikes.create!({name: "Old Green and White", image:"http://www.roadbikereview.com/reviews/wp-content/uploads/2012/11/25A_4_a.jpg",short_description:"Lovely new Racer located in East London close to Bethnal Green", description:"This is the full description of my Bike. The bike is an extremely reliable bike that come with numerouse features, including inflated tyres and extreme style. The perfect bike if you want to avoide looking like Boris Johnson and rent something with a bit of style. I am listing the bike as I currently have no need for my second bike and hope others can enjoy it as much as me!",address:"City Hall The Queen’s Walk More London London SE1 2AA", bike_image: File.open(Rails.root + "app/assets/images/bike5.jpg")})
 
 b6 = u6.bikes.create!({name: "NotABoris bike", image:"http://www.theracingbicycle.com/images/1950_Helyett_Speciale.JPG", short_description:"Lovely new Racer located in East London close to Bethnal Green", description:"This is the full description of my Bike. The bike is an extremely reliable bike that come with numerouse features, including inflated tyres and extreme style. The perfect bike if you want to avoide looking like Boris Johnson and rent something with a bit of style. I am listing the bike as I currently have no need for my second bike and hope others can enjoy it as much as me!", address:"Bressenden Place,
 London, SW1E 5DU ", bike_image: File.open(Rails.root + "app/assets/images/bike6.jpg")})
@@ -92,13 +92,13 @@ b6.save
 b7.features << helmet
 b7.features << lights
 b7.features << lock
-b5.features << flask
+b7.features << flask
 b7.save
 
 b8.features << helmet
 b8.features << lights
 b8.features << lock
-b5.features << flask
+b8.features << flask
 b8.save
 
 b9.features << helmet

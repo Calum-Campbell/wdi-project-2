@@ -1,16 +1,11 @@
-Niceto Have:
-Clearing lightbox on bikeshow
-Features symbols seperated a bit
-RATINGS
-Little profile pic in top right corner
-
-
--How it works page
-- Clean all custom css
-
-
-- Buttons on rental and booking pages
-- Double calendar stuff.
+Run Through:
+1. Home page (Map/footer/responsive)
+2. login ciaran@ciaran.com
+3. My Profile
+4.Middle Bike - Old Green (features/map/profilepic)
+5.Book this bike (Nov 10th 2015, 3 hours)
+6. Maybe quickly through About
+7.List a bike (Notes)
 
 
 
