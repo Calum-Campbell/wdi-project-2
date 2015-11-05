@@ -14,12 +14,20 @@ $(function(){
       var marker = new google.maps.Marker({
         position: myLatLng,
         map: map,
-        title: 'Hello World!'
+        title: 'Hello World!',
+        url: "/bikes/" + gon.bikes[i].id
       });
+      google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
+        return function() {
+          infowindow.setContent(gon.bikes[i].name);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
           infowindow.setContent(gon.bikes[i].name);
           infowindow.open(map, marker);
+          window.location.href = this.url;
         }
       })(marker, i));
     }
