@@ -13,6 +13,7 @@ class BikesController < ApplicationController
     @bike = Bike.find(params[:id])
     gon.latitude = @bike.latitude
     gon.longitude = @bike.longitude
+    gon.bikeName = @bike.name
 
   end
 
