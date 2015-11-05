@@ -1,7 +1,7 @@
  <li class="center no-bullets">
  <ul>
     <li><%= link_to image_tag(bike.bike_image), bike_path(bike)%>   </li>  
-    <li><%= link_to "#{bike.name}", bike_path(bike) %> </li>
-    <li><%= link_to "#{bike.address}", bike_path(bike) %></li>
+    <li id="bike-index-title"><%= link_to "#{bike.name}", bike_path(bike) %> </li>
+    <li id="bike-index-title"><%= link_to "#{bike.address}", bike_path(bike) %></li>
   </ul>
 </li>

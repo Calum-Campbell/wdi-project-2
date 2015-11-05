@@ -18,7 +18,8 @@ class BikesController < ApplicationController
    @bike = current_user.bikes.new(bike_params)
    if @bike.save
     name = @bike.name
-    redirect_to bikes_path
+    redirect_to user_path(id: current_user.id, method: :get)
+    # redirect_to bikes_path
     flash[:notice] = "#{name} created"
   else
     render 'new'

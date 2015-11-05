@@ -2,15 +2,25 @@ $topbar-bg-opacity: 0.1;
 $topbar-bg-color: rgba(red, $topbar-bg-opacity);
 
 #footer-middle {
-  padding-top: 180px;
+  padding-top: 85px;
 }
 .footer-title {
   color: #3a945b;
   text-decoration: underline;
-  padding-top: 40px;
+  padding-top: 20px;
   margin: 0;
 }
 
 .footer-content {
   color: #3a945b;
+}
+
+nav img{
+  height:30px;
+  width: auto;
+}
+
+#footer-logo img {
+  height:40px;
+  width: auto;
 }
