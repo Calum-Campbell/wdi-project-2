@@ -9,7 +9,7 @@ $(function(){
 
       for (i = 0; i < gon.bikes.length; i++){
 
-        var myLatLng = {lat: gon.bikes[i].latitude, lng: gon.bikes[i].longitude};
+        var myLatLng = {lat: parseFloat(gon.bikes[i].latitude), lng: parseFloat(gon.bikes[i].longitude)};
 
       var marker = new google.maps.Marker({
         position: myLatLng,
