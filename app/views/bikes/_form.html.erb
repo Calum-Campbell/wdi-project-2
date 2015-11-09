@@ -1,9 +1,9 @@
 <div class='spacer'></div>
-  <div class ="row center">
+<div class ="row center">
     <div class="small-12 large-12 columns">
       <ul class='no-bullets'> 
-            <%= form_for @bike do |f| %>
-            <%= render 'errors' %>
+        <%= form_for @bike do |f| %>
+        <%= render 'errors' %>
         <li>Name of Bike</li>    
         <li><%= f.text_field 'name', placeholder: 'Bike Name'%></li>
         <li>Tag Line for the bike</li>  
@@ -19,9 +19,9 @@
         <li>Extras that your bike has:</li>  
         <li id="test1"><%=f.collection_check_boxes(:feature_ids, Feature.all, :id, :name) %></li>
         <li><%= f.submit 'Submit', class: "button expand" %></li> 
-            <% end %>
-      </ul>
-    </div> 
+        <% end %>
+    </ul>
+</div> 
 </div>
 
 
