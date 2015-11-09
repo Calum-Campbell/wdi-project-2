@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem "fog"
+gem 'fog', '1.29.0'
 
 gem 'gon'
 gem 'devise'

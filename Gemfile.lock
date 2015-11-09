@@ -279,7 +279,7 @@ DEPENDENCIES
   carrierwave (= 0.10.0)
   coffee-rails (~> 4.1.0)
   devise
-  fog
+  fog (= 1.29.0)
   foundation-rails
   geocoder
   gon
