@@ -7,11 +7,11 @@ Vairl is a bike lending and renting application built with Ruby on Rails.
 
 [Try it out here](https://http://vairlo.heroku-app.com/)
 
-![alt text](./screen-shots/home.png)
+![](./screen-shots/home.png)
 
-![alt text](./screen-shots/bikes.png)
+![](./screen-shots/bikes.png)
 
-![alt text](./screen-shots/profile.png)
+![](./screen-shots/profile.png)
 
 
 ### The App
