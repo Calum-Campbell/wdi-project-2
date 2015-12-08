@@ -1,10 +1,10 @@
 class BookingsController < ApplicationController
-  respond_to :html, :xml, :json
+  # respond_to :html, :xml, :json
   
   before_action :find_bike
 
   def index
-    @bookings = Booking.where("bike_id = ? AND end_time >= ?", @bike.id, Time.now).order(:start_time)
+    @bookings = Booking.upcoming(@bike)
     respond_with @bookings
   end
 
@@ -13,8 +13,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking =  current_user.bookings.new(params[:booking].permit(:bike_id, :start_time, :length))   
-    # @booking =  Booking.new(params[:booking].permit(:bike_id, :start_time, :length))
+    @booking =  current_user.bookings.new(booking_params)   
     @booking.bike = @bike
     if @booking.save
       redirect_to bookings_user_path(id: current_user.id, method: :get)
@@ -45,7 +44,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     # @booking.bike = @bike
 
-    if @booking.update(params[:booking].permit(:bike_id, :start_time, :length))
+    if @booking.update(booking_params)
       flash[:notice] = 'Your booking was updated succesfully'
 
       if request.xhr?
@@ -60,19 +59,23 @@ class BookingsController < ApplicationController
 
   private
 
-  def save booking
-    if @booking.save
-        flash[:notice] = 'booking added'
-        redirect_to bike_booking_path(@bike, @booking)
-      else
-        render 'new'
-      end
-  end
-
-  def find_bike
-    if params[:bike_id]
-      @bike = Bike.find_by_id(params[:bike_id])
+    def booking_params
+      params.require(:booking).permit(:bike_id, :start_time, :length)
     end
-  end
+
+    def save booking
+      if @booking.save
+          flash[:notice] = 'booking added'
+          redirect_to bike_booking_path(@bike, @booking)
+        else
+          render 'new'
+        end
+    end
+
+    def find_bike
+      if params[:bike_id]
+        @bike = Bike.find_by_id(params[:bike_id])
+      end
+    end
 
 end

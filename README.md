@@ -1,21 +1,37 @@
-# To Do
+#Ruby on Rails Web Application
 
-##WDI London - Project 2
+##Vairlo
+
+### About Vairlo
+Vairl is a bike lending and renting application built with Ruby on Rails. 
+
+[Try it out here](https://http://vairlo.heroku-app.com/)
+
+![alt text](./screen-shots/home.png)
+
+![alt text](./screen-shots/bikes.png)
+
+![alt text](./screen-shots/profile.png)
 
 
-[Test your ability here!](https://peaceful-savannah-3782.herokuapp.com/)
+### The App
+####Functionality and How it works
+1. Users sign up and login
+2. Users can browse bikes based on location and availability.
+3. Users can also post their own bikes available for rent.
 
+###Approach and build
+1. Ruby on Rails Application
+2. The following Ruby gems were used:
+    - gon - Used to send data to javascript files
+    - Bookable - used for booking capabilities
+    - Geocoder - used for google maps location services
+    - Carrier Wave - used to allow user uploads of images
+    - Devise - used for authentication
+3. Foundations framework used for styling and sass css.
+4. HTML5 as HTML (Rails) erb files
+5. JavaScript was used in conjunction with Ruby.
 
-### Website
-
-![alt text](./screen-shots/main-screen.png)
-
-
-##Approach / how it works
-
-
-![alt text](./screen-shots/screen-3.png)
-
-##The Build
 
 ## Problems / Solutions
+- Implementing ruby data within javascript was a challenge that was ovecome with the ruby gem Gon.
